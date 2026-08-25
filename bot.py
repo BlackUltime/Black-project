@@ -1,3 +1,16 @@
+from threading import Thread
+from flask import Flask
+
+app = Flask("")
+
+
+@app.route("/")
+def home():
+  return "Bot OK"
+
+
+Thread(target=lambda: app.run(host="0.0.0.0", port=10000)).start()
+import os
 import discord
 from discord import app_commands
 import cloudscraper
